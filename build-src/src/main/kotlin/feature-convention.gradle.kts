@@ -41,10 +41,6 @@ android {
         jvmTarget = "17"
     }
 
-    packaging {
-        resources.excludes.add("META-INF/*")
-    }
-
     tasks.withType<Test> {
         useJUnit()
     }
@@ -54,12 +50,24 @@ android {
             isIncludeAndroidResources = true
         }
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+    packaging {
+        resources.excludes.add("META-INF/*")
+        resources.excludes.add("META-INF/versions/9/OSGI-INF/MANIFEST.MF")
+    }
 }
 
 dependencies {
     implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.junit.ktx)
     implementation(libs.hilt)
+    implementation(libs.junit4)
     implementation(libs.material)
+    implementation(libs.robolectric)
     kapt(libs.hilt.compiler)
 }
 

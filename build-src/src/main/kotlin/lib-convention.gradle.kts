@@ -38,6 +38,7 @@ android {
 
     packaging {
         resources.excludes.add("META-INF/*")
+        resources.excludes.add("META-INF/versions/9/OSGI-INF/MANIFEST.MF")
     }
 }
 

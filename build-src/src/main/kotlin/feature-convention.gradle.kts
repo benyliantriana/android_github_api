@@ -1,42 +1,58 @@
+package com.example.githubapiapp
+
+import com.example.githubapiapp.common.libs
+
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.hilt)
-    alias(libs.plugins.kotlin.android)
+    `android-library`
+    `kotlin-android`
+    `kotlin-kapt`
+    `kotlin-parcelize`
+    `kotlinx-serialization`
     kotlin("kapt")
 }
 
+
+
 android {
-    namespace = "com.example.githubapiapp"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.githubapiapp"
         minSdk = 21
-        targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+
     kotlinOptions {
         jvmTarget = "17"
+    }
+
+    packaging {
+        resources.excludes.add("META-INF/*")
+    }
+
+    tasks.withType<Test> {
+        useJUnit()
+    }
+
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+        }
     }
 }
 
@@ -49,8 +65,4 @@ dependencies {
 
 kapt {
     correctErrorTypes = true
-}
-
-hilt {
-    enableAggregatingTask = false
 }

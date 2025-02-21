@@ -38,6 +38,10 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+    packaging {
+        resources.excludes.add("META-INF/*")
+        resources.excludes.add("META-INF/versions/9/OSGI-INF/MANIFEST.MF")
+    }
 }
 
 dependencies {
@@ -45,12 +49,9 @@ dependencies {
     implementation(libs.hilt)
     implementation(libs.material)
     kapt(libs.hilt.compiler)
+    implementation(project(":features:feature_users"))
 }
 
 kapt {
     correctErrorTypes = true
-}
-
-hilt {
-    enableAggregatingTask = false
 }

@@ -21,6 +21,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "Github Api App"
 include(":app")
+include(":features:feature_users")
 includeBuild("build-src")
 
 // this line is required, somehow the convention has some blocking process, even no test classes there

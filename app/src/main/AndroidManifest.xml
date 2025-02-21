@@ -12,6 +12,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GithubApiApp"
-        tools:targetApi="35" />
+        tools:targetApi="35">
+        <activity android:name=".feature_users.UsersActivity" />
+        <activity-alias
+            android:name=".MainActivity"
+            android:exported="true"
+            android:targetActivity="com.example.githubapiapp.feature_users.UsersActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+    </application>
 
 </manifest>

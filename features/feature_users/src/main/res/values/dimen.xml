@@ -1,0 +1,17 @@
+<resources>
+    <dimen name="content_padding">16dp</dimen>
+    <dimen name="elevation_default">1dp</dimen>
+    <dimen name="padding_action_bar_title">48dp</dimen>
+    <dimen name="padding_default">8dp</dimen>
+    <dimen name="padding_4">4dp</dimen>
+    <dimen name="padding_6">6dp</dimen>
+
+    <dimen name="text_header">16sp</dimen>
+    <dimen name="text_title">16sp</dimen>
+    <dimen name="text_body">14sp</dimen>
+    <dimen name="text_helper">12sp</dimen>
+
+    <dimen name="text_title_height">19sp</dimen>
+    <dimen name="text_body_height">16sp</dimen>
+    <dimen name="text_helper_height">14sp</dimen>
+</resources>

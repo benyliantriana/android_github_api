@@ -72,6 +72,8 @@ dependencies {
     implementation(libs.robolectric)
     implementation(libs.retrofit)
     implementation(libs.kotlinx.serialization.json)
+
+    implementation(project(":libs:lib_base"))
     kapt(libs.hilt.compiler)
 }
 

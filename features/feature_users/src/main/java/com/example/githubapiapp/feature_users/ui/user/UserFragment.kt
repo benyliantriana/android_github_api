@@ -8,7 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.githubapiapp.feature_users.R
 import com.example.githubapiapp.feature_users.databinding.UserFragmentBinding
-import com.example.githubapiapp.feature_users.ui.BaseFragment
+import com.example.githubapiapp.lib_base.fragment.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

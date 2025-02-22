@@ -1,4 +1,4 @@
-package com.example.githubapiapp.feature_users.util.exception
+package com.example.githubapiapp.lib_base.exception
 
 import java.io.IOException
 

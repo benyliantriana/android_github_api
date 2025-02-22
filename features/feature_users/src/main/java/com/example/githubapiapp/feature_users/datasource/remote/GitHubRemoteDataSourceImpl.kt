@@ -5,8 +5,7 @@ import com.example.githubapiapp.feature_users.data.response.GitHubRepoListRespon
 import com.example.githubapiapp.feature_users.data.response.GitHubSearchResponse
 import com.example.githubapiapp.feature_users.data.response.GitHubUserDetailResponse
 import com.example.githubapiapp.feature_users.data.response.GitHubUserResponse
-import com.example.githubapiapp.feature_users.di.IODispatcher
-import com.example.githubapiapp.feature_users.util.exception.getDefaultRemoteException
+import com.example.githubapiapp.lib_base.di.IODispatcher
 import com.example.githubapiapp.lib_network.response.BaseResponse
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
@@ -19,7 +18,8 @@ class GitHubRemoteDataSourceImpl @Inject constructor(
 ) : GitHubRemoteDataSource {
     override suspend fun getUsers(page: Int): BaseResponse<List<GitHubUserResponse>> =
         withContext(ioDispatcher) {
-            val defaultExceptionData = getDefaultRemoteException()
+            val defaultExceptionData =
+                com.example.githubapiapp.lib_base.exception.getDefaultRemoteException()
             var responseResult: BaseResponse<List<GitHubUserResponse>> = BaseResponse.Failed(
                 code = defaultExceptionData.code, message = defaultExceptionData.message
             )
@@ -38,7 +38,8 @@ class GitHubRemoteDataSourceImpl @Inject constructor(
         name: String,
         page: Int,
     ): BaseResponse<List<GitHubSearchResponse>> = withContext(ioDispatcher) {
-        val defaultExceptionData = getDefaultRemoteException()
+        val defaultExceptionData =
+            com.example.githubapiapp.lib_base.exception.getDefaultRemoteException()
         var responseResult: BaseResponse<List<GitHubSearchResponse>> = BaseResponse.Failed(
             code = defaultExceptionData.code, message = defaultExceptionData.message
         )
@@ -55,7 +56,8 @@ class GitHubRemoteDataSourceImpl @Inject constructor(
 
     override suspend fun getDetailUser(username: String): BaseResponse<GitHubUserDetailResponse> =
         withContext(ioDispatcher) {
-            val defaultExceptionData = getDefaultRemoteException()
+            val defaultExceptionData =
+                com.example.githubapiapp.lib_base.exception.getDefaultRemoteException()
             var responseResult: BaseResponse<GitHubUserDetailResponse> = BaseResponse.Failed(
                 code = defaultExceptionData.code, message = defaultExceptionData.message
             )
@@ -72,7 +74,8 @@ class GitHubRemoteDataSourceImpl @Inject constructor(
 
     override suspend fun getUserRepos(username: String): BaseResponse<List<GitHubRepoListResponse>> =
         withContext(ioDispatcher) {
-            val defaultExceptionData = getDefaultRemoteException()
+            val defaultExceptionData =
+                com.example.githubapiapp.lib_base.exception.getDefaultRemoteException()
             var responseResult: BaseResponse<List<GitHubRepoListResponse>> = BaseResponse.Failed(
                 code = defaultExceptionData.code, message = defaultExceptionData.message
             )

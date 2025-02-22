@@ -50,6 +50,7 @@ dependencies {
     implementation(libs.material)
     kapt(libs.hilt.compiler)
     implementation(project(":features:feature_users"))
+    implementation(project(":libs:lib_base"))
 }
 
 kapt {

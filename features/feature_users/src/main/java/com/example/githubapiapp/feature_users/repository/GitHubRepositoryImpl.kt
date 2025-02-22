@@ -21,7 +21,7 @@ class GitHubRepositoryImpl @Inject constructor(
     override suspend fun getSearchUser(
         name: String,
         page: Int,
-    ): Flow<BaseResponse<List<GitHubSearchResponse>>> = flow {
+    ): Flow<BaseResponse<GitHubSearchResponse>> = flow {
         emit(BaseResponse.Loading)
         emit(gitHubRemoteDataSource.getSearchUser(name, page))
     }

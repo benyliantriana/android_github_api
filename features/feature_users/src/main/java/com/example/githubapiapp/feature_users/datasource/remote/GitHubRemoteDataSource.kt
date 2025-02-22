@@ -8,7 +8,7 @@ import com.example.githubapiapp.lib_network.response.BaseResponse
 
 interface GitHubRemoteDataSource {
     suspend fun getUsers(page: Int): BaseResponse<List<GitHubUserResponse>>
-    suspend fun getSearchUser(name: String, page: Int): BaseResponse<List<GitHubSearchResponse>>
+    suspend fun getSearchUser(name: String, page: Int): BaseResponse<GitHubSearchResponse>
     suspend fun getDetailUser(username: String): BaseResponse<GitHubUserDetailResponse>
     suspend fun getUserRepos(username: String): BaseResponse<List<GitHubRepoResponse>>
 }

@@ -50,6 +50,9 @@ class UserFragment : BaseFragment<UserFragmentBinding>() {
             adapter = userAdapter
             this.layoutManager = layoutManager
         }
+        layout.tvSearch.setOnClickListener {
+            viewModel.searchUser(layout.etSearch.text.toString())
+        }
     }
 
     @SuppressLint("NotifyDataSetChanged")

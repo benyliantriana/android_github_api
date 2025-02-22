@@ -18,9 +18,8 @@ interface GitHubApi {
     @GET("search/users")
     fun searchUsers(
         @Query("q") query: String,
-        @Query("per_page") perPage: Int = 30,
         @Query("page") page: Int = 1,
-    ): Call<List<GitHubSearchResponse>>
+    ): Call<GitHubSearchResponse>
 
     @GET("users/{username}")
     fun getUserDetails(@Path("username") username: String): Call<GitHubUserDetailResponse>

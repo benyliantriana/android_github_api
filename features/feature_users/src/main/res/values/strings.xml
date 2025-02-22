@@ -3,6 +3,7 @@
     <string name="user_title">User List</string>
     <string name="user_detail_title">User Detail</string>
     <string name="user_loading">Loading...</string>
+    <string name="user_search">Search</string>
 
     <string name="user_username">Username: %1$s</string>
     <string name="user_github">GitHub: %1$s</string>

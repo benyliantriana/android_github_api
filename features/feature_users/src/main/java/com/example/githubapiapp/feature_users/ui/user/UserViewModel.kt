@@ -44,4 +44,29 @@ open class UserViewModel @Inject constructor(
             }
         }
     }
+
+    fun searchUser(username: String) {
+        viewModelScope.launch(ioDispatcher) {
+            if (username.isEmpty()) {
+                getUsers()
+            } else {
+                gitHubRepository.getSearchUser(username, 1).collect { result ->
+                    when (result) {
+                        is BaseResponse.Loading -> {
+                            _userList.value = GitHubRepoListUiState.Loading
+                        }
+
+                        is BaseResponse.Success -> {
+                            _userList.value = GitHubRepoListUiState.Success(result.data.items)
+                        }
+
+                        is BaseResponse.Failed -> {
+                            _userList.value =
+                                GitHubRepoListUiState.Failed(result.code, result.message)
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

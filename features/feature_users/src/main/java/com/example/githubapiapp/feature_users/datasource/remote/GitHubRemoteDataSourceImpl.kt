@@ -37,10 +37,10 @@ class GitHubRemoteDataSourceImpl @Inject constructor(
     override suspend fun getSearchUser(
         name: String,
         page: Int,
-    ): BaseResponse<List<GitHubSearchResponse>> = withContext(ioDispatcher) {
+    ): BaseResponse<GitHubSearchResponse> = withContext(ioDispatcher) {
         val defaultExceptionData =
             com.example.githubapiapp.lib_base.exception.getDefaultRemoteException()
-        var responseResult: BaseResponse<List<GitHubSearchResponse>> = BaseResponse.Failed(
+        var responseResult: BaseResponse<GitHubSearchResponse> = BaseResponse.Failed(
             code = defaultExceptionData.code, message = defaultExceptionData.message
         )
         val result = gitHubApi.searchUsers(name, page).awaitResponse()

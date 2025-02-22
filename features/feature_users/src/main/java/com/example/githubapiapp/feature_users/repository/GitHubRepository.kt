@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface GitHubRepository {
     suspend fun getUsers(page: Int): Flow<BaseResponse<List<GitHubUserResponse>>>
-    suspend fun getSearchUser(name: String, page: Int): Flow<BaseResponse<List<GitHubSearchResponse>>>
+    suspend fun getSearchUser(name: String, page: Int): Flow<BaseResponse<GitHubSearchResponse>>
     suspend fun getDetailUser(username: String): Flow<BaseResponse<GitHubUserDetailResponse>>
     suspend fun getUserRepos(username: String): Flow<BaseResponse<List<GitHubRepoResponse>>>
 }

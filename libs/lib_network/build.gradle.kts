@@ -10,4 +10,3 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.gson.converter)
 }
-

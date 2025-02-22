@@ -22,6 +22,7 @@ dependencyResolutionManagement {
 rootProject.name = "Github Api App"
 include(":app")
 include(":features:feature_users")
+include(":libs:lib_base")
 include(":libs:lib_network")
 includeBuild("build-src")
 

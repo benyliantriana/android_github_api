@@ -11,12 +11,16 @@ material = "1.12.0"
 navigation = "2.8.7"
 retrofit = "2.11.0"
 robolectric = "4.14"
+core-ktx = "1.15.0"
+junit = "1.2.1"
+espresso-core = "3.6.1"
 
 [libraries]
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 androidx-junit-ktx = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "junit-version" }
 hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+gson-converter = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
 junit4 = { group = "junit", name = "junit", version.ref = "junit4" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
@@ -29,6 +33,9 @@ robolectric = { group = "org.robolectric", name = "robolectric", version.ref = "
 plugin-android = { module = "com.android.tools.build:gradle", version.ref = "agp" }
 plugin-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 plugin-kotlin-serialization = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junit" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

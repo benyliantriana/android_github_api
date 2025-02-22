@@ -22,6 +22,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/arrow_back" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/content_padding"
+                android:text="User Detail"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@id/app_bar"
+                app:layout_constraintTop_toBottomOf="@id/app_bar" />
         </com.google.android.material.appbar.MaterialToolbar>
 
     </com.google.android.material.appbar.AppBarLayout>

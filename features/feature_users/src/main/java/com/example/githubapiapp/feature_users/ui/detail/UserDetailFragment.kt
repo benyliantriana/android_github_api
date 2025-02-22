@@ -1,4 +1,4 @@
-package com.example.githubapiapp.feature_users
+package com.example.githubapiapp.feature_users.ui.detail
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.githubapiapp.feature_users.databinding.UserDetailFragmentBinding
+import com.example.githubapiapp.feature_users.ui.BaseFragment
 
 class UserDetailFragment : BaseFragment<UserDetailFragmentBinding>() {
     override fun inflateLayout(

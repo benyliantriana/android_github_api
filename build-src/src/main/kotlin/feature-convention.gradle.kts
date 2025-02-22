@@ -70,6 +70,8 @@ dependencies {
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
     implementation(libs.robolectric)
+    implementation(libs.retrofit)
+    implementation(libs.kotlinx.serialization.json)
     kapt(libs.hilt.compiler)
 }
 

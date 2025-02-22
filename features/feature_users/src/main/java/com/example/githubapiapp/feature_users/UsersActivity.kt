@@ -1,8 +1,10 @@
 package com.example.githubapiapp.feature_users
 
 import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.githubapiapp.feature_users.databinding.UsersActivityBinding
 
 class UsersActivity : AppCompatActivity() {
@@ -10,16 +12,17 @@ class UsersActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setBinding()
         setContentView(binding.root)
-        setStatusBarColor()
+        setNavHost()
     }
 
     private fun setBinding() {
         binding = UsersActivityBinding.inflate(layoutInflater)
     }
 
-    private fun setStatusBarColor() {
-        window.statusBarColor = ContextCompat.getColor(this, R.color.navy)
+    private fun setNavHost() {
+        findNavController(R.id.nav_host_fragment)
     }
 }

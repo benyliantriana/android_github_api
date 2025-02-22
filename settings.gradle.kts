@@ -22,8 +22,8 @@ dependencyResolutionManagement {
 rootProject.name = "Github Api App"
 include(":app")
 include(":features:feature_users")
+include(":libs:lib_network")
 includeBuild("build-src")
 
 // this line is required, somehow the convention has some blocking process, even no test classes there
 gradle.startParameter.excludedTaskNames.addAll(listOf(":build-src:testClasses"))
-include(":libs:lib_network")

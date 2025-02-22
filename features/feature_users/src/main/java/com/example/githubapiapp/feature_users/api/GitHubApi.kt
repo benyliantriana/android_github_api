@@ -1,6 +1,6 @@
 package com.example.githubapiapp.feature_users.api
 
-import com.example.githubapiapp.feature_users.data.response.GitHubRepoListResponse
+import com.example.githubapiapp.feature_users.data.response.GitHubRepoResponse
 import com.example.githubapiapp.feature_users.data.response.GitHubSearchResponse
 import com.example.githubapiapp.feature_users.data.response.GitHubUserDetailResponse
 import com.example.githubapiapp.feature_users.data.response.GitHubUserResponse
@@ -26,5 +26,5 @@ interface GitHubApi {
     fun getUserDetails(@Path("username") username: String): Call<GitHubUserDetailResponse>
 
     @GET("users/{username}/repos")
-    fun getUserRepos(@Path("username") username: String): Call<List<GitHubRepoListResponse>>
+    fun getUserRepos(@Path("username") username: String): Call<List<GitHubRepoResponse>>
 }

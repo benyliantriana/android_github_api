@@ -16,4 +16,8 @@
     <string name="user_gists">Total Gists: %1$d</string>
     <string name="user_followers">Followers: %1$d</string>
     <string name="user_following">Following: %1$d</string>
+    <string name="user_stars">Stars: %1$d</string>
+    <string name="user_watcher">Watchers: %1$d</string>
+    <string name="user_language">Language: %1$s</string>
+    <string name="user_repo_list">== Repo List ==</string>
 </resources>

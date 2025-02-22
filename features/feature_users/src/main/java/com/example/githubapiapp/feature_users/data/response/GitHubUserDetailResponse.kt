@@ -18,4 +18,5 @@ data class GitHubUserDetailResponse(
     @SerializedName("public_gists") val gists: Long,
     val followers: Long,
     val following: Long,
+    var repoList: List<GitHubRepoResponse> = emptyList()
 )

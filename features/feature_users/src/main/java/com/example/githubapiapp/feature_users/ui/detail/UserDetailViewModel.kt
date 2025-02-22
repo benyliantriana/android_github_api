@@ -10,6 +10,8 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -33,22 +35,29 @@ open class UserDetailViewModel @Inject constructor(
     fun getUserDetail() {
         viewModelScope.launch(ioDispatcher) {
             username.value?.let {
-                gitHubRepository.getDetailUser(it).collect { result ->
-                    when (result) {
-                        is BaseResponse.Loading -> {
-                            _userData.value = GitHubUserDetailUiState.Loading
-                        }
+                gitHubRepository.getDetailUser(it)
+                    .combine(gitHubRepository.getUserRepos(it)) { user, repo ->
+                        when (user) {
+                            is BaseResponse.Loading -> {
+                                _userData.value = GitHubUserDetailUiState.Loading
+                            }
 
-                        is BaseResponse.Success -> {
-                            _userData.value = GitHubUserDetailUiState.Success(result.data)
-                        }
+                            is BaseResponse.Success -> {
+                                if (repo is BaseResponse.Success) {
+                                    _userData.value = GitHubUserDetailUiState.Success(
+                                        user.data.apply {
+                                            repoList = repo.data
+                                        }
+                                    )
+                                }
+                            }
 
-                        is BaseResponse.Failed -> {
-                            _userData.value =
-                                GitHubUserDetailUiState.Failed(result.code, result.message)
+                            is BaseResponse.Failed -> {
+                                _userData.value =
+                                    GitHubUserDetailUiState.Failed(user.code, user.message)
+                            }
                         }
-                    }
-                }
+                    }.collect()
             }
         }
     }

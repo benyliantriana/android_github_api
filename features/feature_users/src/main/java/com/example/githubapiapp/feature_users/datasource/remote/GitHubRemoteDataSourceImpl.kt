@@ -1,7 +1,7 @@
 package com.example.githubapiapp.feature_users.datasource.remote
 
 import com.example.githubapiapp.feature_users.api.GitHubApi
-import com.example.githubapiapp.feature_users.data.response.GitHubRepoListResponse
+import com.example.githubapiapp.feature_users.data.response.GitHubRepoResponse
 import com.example.githubapiapp.feature_users.data.response.GitHubSearchResponse
 import com.example.githubapiapp.feature_users.data.response.GitHubUserDetailResponse
 import com.example.githubapiapp.feature_users.data.response.GitHubUserResponse
@@ -72,11 +72,11 @@ class GitHubRemoteDataSourceImpl @Inject constructor(
             return@withContext responseResult
         }
 
-    override suspend fun getUserRepos(username: String): BaseResponse<List<GitHubRepoListResponse>> =
+    override suspend fun getUserRepos(username: String): BaseResponse<List<GitHubRepoResponse>> =
         withContext(ioDispatcher) {
             val defaultExceptionData =
                 com.example.githubapiapp.lib_base.exception.getDefaultRemoteException()
-            var responseResult: BaseResponse<List<GitHubRepoListResponse>> = BaseResponse.Failed(
+            var responseResult: BaseResponse<List<GitHubRepoResponse>> = BaseResponse.Failed(
                 code = defaultExceptionData.code, message = defaultExceptionData.message
             )
             val result = gitHubApi.getUserRepos(username).awaitResponse()

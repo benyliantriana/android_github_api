@@ -1,6 +1,6 @@
 package com.example.githubapiapp.feature_users.repository
 
-import com.example.githubapiapp.feature_users.data.response.GitHubRepoListResponse
+import com.example.githubapiapp.feature_users.data.response.GitHubRepoResponse
 import com.example.githubapiapp.feature_users.data.response.GitHubSearchResponse
 import com.example.githubapiapp.feature_users.data.response.GitHubUserDetailResponse
 import com.example.githubapiapp.feature_users.data.response.GitHubUserResponse
@@ -32,7 +32,7 @@ class GitHubRepositoryImpl @Inject constructor(
             emit(gitHubRemoteDataSource.getDetailUser(username))
         }
 
-    override suspend fun getUserRepos(username: String): Flow<BaseResponse<List<GitHubRepoListResponse>>> =
+    override suspend fun getUserRepos(username: String): Flow<BaseResponse<List<GitHubRepoResponse>>> =
         flow {
             emit(BaseResponse.Loading)
             emit(gitHubRemoteDataSource.getUserRepos(username))

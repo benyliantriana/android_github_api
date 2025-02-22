@@ -1,5 +1,6 @@
 package com.example.githubapiapp.feature_users.ui.detail
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,8 +10,10 @@ import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.githubapiapp.feature_users.R
+import com.example.githubapiapp.feature_users.data.response.GitHubRepoResponse
 import com.example.githubapiapp.feature_users.data.response.GitHubUserDetailResponse
 import com.example.githubapiapp.feature_users.data.ui.GitHubUserDetailUiState
 import com.example.githubapiapp.feature_users.databinding.UserDetailFragmentBinding
@@ -23,6 +26,10 @@ class UserDetailFragment : BaseFragment<UserDetailFragmentBinding>() {
 
     private val args: UserDetailFragmentArgs by navArgs()
     private lateinit var viewModel: UserDetailViewModel
+
+    private var repoList = ArrayList<GitHubRepoResponse>(arrayListOf())
+    private lateinit var repoAdapter: RepoAdapter
+
     override fun inflateLayout(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -34,6 +41,7 @@ class UserDetailFragment : BaseFragment<UserDetailFragmentBinding>() {
         super.onViewCreated(view, savedInstanceState)
         initVm()
         initAppBar()
+        initView()
         initUserDetailData()
     }
 
@@ -51,6 +59,15 @@ class UserDetailFragment : BaseFragment<UserDetailFragmentBinding>() {
                     findNavController().navigateUp()
                 }
             }
+        }
+    }
+
+    private fun initView() {
+        val layoutManager = LinearLayoutManager(context)
+        repoAdapter = RepoAdapter(requireContext(), repoList)
+        layout.rvRepos.apply {
+            adapter = repoAdapter
+            this.layoutManager = layoutManager
         }
     }
 
@@ -83,7 +100,12 @@ class UserDetailFragment : BaseFragment<UserDetailFragmentBinding>() {
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun successView(user: GitHubUserDetailResponse) {
+        repoList.clear()
+        repoList.addAll(user.repoList)
+        repoAdapter.notifyDataSetChanged()
+
         with(layout) {
             loading.visibility = View.INVISIBLE
             group.visibility = View.VISIBLE
@@ -107,6 +129,8 @@ class UserDetailFragment : BaseFragment<UserDetailFragmentBinding>() {
             tvGists.text = getString(R.string.user_gists, user.gists)
             tvFollowers.text = getString(R.string.user_followers, user.followers)
             tvFollowing.text = getString(R.string.user_following, user.following)
+
+            tvName.text = rvRepos.adapter?.itemCount.toString()
         }
     }
 }

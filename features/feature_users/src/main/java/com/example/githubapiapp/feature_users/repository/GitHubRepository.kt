@@ -1,6 +1,6 @@
 package com.example.githubapiapp.feature_users.repository
 
-import com.example.githubapiapp.feature_users.data.response.GitHubRepoListResponse
+import com.example.githubapiapp.feature_users.data.response.GitHubRepoResponse
 import com.example.githubapiapp.feature_users.data.response.GitHubSearchResponse
 import com.example.githubapiapp.feature_users.data.response.GitHubUserDetailResponse
 import com.example.githubapiapp.feature_users.data.response.GitHubUserResponse
@@ -11,5 +11,5 @@ interface GitHubRepository {
     suspend fun getUsers(page: Int): Flow<BaseResponse<List<GitHubUserResponse>>>
     suspend fun getSearchUser(name: String, page: Int): Flow<BaseResponse<List<GitHubSearchResponse>>>
     suspend fun getDetailUser(username: String): Flow<BaseResponse<GitHubUserDetailResponse>>
-    suspend fun getUserRepos(username: String): Flow<BaseResponse<List<GitHubRepoListResponse>>>
+    suspend fun getUserRepos(username: String): Flow<BaseResponse<List<GitHubRepoResponse>>>
 }

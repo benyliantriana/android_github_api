@@ -21,7 +21,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/content_padding"
-                android:text="User List"
+                android:text="@string/user_title"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="@id/app_bar"
                 app:layout_constraintTop_toBottomOf="@id/app_bar" />
@@ -29,21 +29,22 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/content_padding"
-        android:text="user fragment"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_users"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/padding_26"
+        android:padding="@dimen/padding_default"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/app_bar" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_detail"
-        android:layout_width="match_parent"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/padding_default"
-        android:text="Detail"
+        android:text="@string/user_loading"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label" />
+        app:layout_constraintTop_toBottomOf="@+id/app_bar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

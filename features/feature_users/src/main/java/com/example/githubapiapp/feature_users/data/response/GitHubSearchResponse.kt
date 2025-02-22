@@ -1,10 +1,8 @@
 package com.example.githubapiapp.feature_users.data.response
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class GitHubSearchResponse(
-    @SerialName("total_count") val totalCount: Long,
+    @SerializedName("total_count") val totalCount: Long,
     val items: List<GitHubUserResponse>,
 )

@@ -1,5 +1,6 @@
 plugins {
     id("com.example.githubapiapp.feature-convention")
+    alias(libs.plugins.safeargs)
     alias(libs.plugins.hilt)
 }
 

@@ -1,12 +1,10 @@
 package com.example.githubapiapp.feature_users.data.response
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class GitHubUserResponse(
+    @SerializedName("login") val username: String,
     val id: Long,
-    @SerialName("login") val username: String,
-    @SerialName("avatar_url") val avatar: String,
-    val url: String,
+    @SerializedName("node_id") val nodeId: String,
+    @SerializedName("avatar_url") val avatar: String,
 )

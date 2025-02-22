@@ -23,8 +23,8 @@ interface GitHubApi {
     ): Call<List<GitHubSearchResponse>>
 
     @GET("users/{username}")
-    suspend fun getUserDetails(@Path("username") username: String): Call<GitHubUserDetailResponse>
+    fun getUserDetails(@Path("username") username: String): Call<GitHubUserDetailResponse>
 
     @GET("users/{username}/repos")
-    suspend fun getUserRepos(@Path("username") username: String): Call<List<GitHubRepoListResponse>>
+    fun getUserRepos(@Path("username") username: String): Call<List<GitHubRepoListResponse>>
 }

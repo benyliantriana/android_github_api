@@ -16,6 +16,10 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.example.githubapiapp.feature_users.ui.detail.UserDetailFragment"
-        android:label="Detail" />
+        android:label="Detail">
+        <argument
+            android:name="username"
+            app:argType="string" />
+    </fragment>
 
 </navigation>

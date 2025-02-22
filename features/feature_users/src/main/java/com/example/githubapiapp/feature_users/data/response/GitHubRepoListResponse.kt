@@ -1,16 +1,14 @@
 package com.example.githubapiapp.feature_users.data.response
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class GitHubRepoListResponse(
     val id: Long,
     val name: String,
-    @SerialName("full_name") val fullName: String,
-    @SerialName("html_url") val url: String,
+    @SerializedName("full_name") val fullName: String,
+    @SerializedName("html_url") val url: String,
     val description: String,
     val fork: Boolean,
-    @SerialName("stargazers_count") val stars: Long,
+    @SerializedName("stargazers_count") val stars: Long,
     val language: String,
 )

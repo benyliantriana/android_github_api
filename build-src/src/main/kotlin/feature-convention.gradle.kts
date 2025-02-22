@@ -6,8 +6,6 @@ plugins {
     `android-library`
     `kotlin-android`
     `kotlin-kapt`
-    `kotlin-parcelize`
-    `kotlinx-serialization`
     kotlin("kapt")
 }
 
@@ -64,6 +62,9 @@ android {
 dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.junit.ktx)
+    implementation(libs.constraint)
+    implementation(libs.glide)
+    kapt(libs.glide.compiler)
     implementation(libs.hilt)
     implementation(libs.junit4)
     implementation(libs.material)
@@ -71,7 +72,7 @@ dependencies {
     implementation(libs.navigation.ui)
     implementation(libs.robolectric)
     implementation(libs.retrofit)
-    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.gson.converter)
 
     implementation(project(":libs:lib_base"))
     kapt(libs.hilt.compiler)

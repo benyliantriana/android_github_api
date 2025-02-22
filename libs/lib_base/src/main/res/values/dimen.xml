@@ -5,6 +5,12 @@
     <dimen name="padding_default">8dp</dimen>
     <dimen name="padding_4">4dp</dimen>
     <dimen name="padding_6">6dp</dimen>
+    <dimen name="padding_26">26dp</dimen>
+
+    <dimen name="radius_default">8dp</dimen>
+
+    <dimen name="avatar_size">32dp</dimen>
+    <dimen name="detail_avatar_size">256dp</dimen>
 
     <dimen name="text_header">16sp</dimen>
     <dimen name="text_title">16sp</dimen>

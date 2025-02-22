@@ -1,3 +1,19 @@
 <resources>
     <string name="app_title">Github Api App</string>
+    <string name="user_title">User List</string>
+    <string name="user_detail_title">User Detail</string>
+    <string name="user_loading">Loading...</string>
+
+    <string name="user_username">Username: %1$s</string>
+    <string name="user_github">GitHub: %1$s</string>
+    <string name="user_company">Company: %1$s</string>
+    <string name="user_blog">Blog: %1$s</string>
+    <string name="user_location">Location: %1$s</string>
+    <string name="user_email">Email: %1$s</string>
+    <string name="user_bio">Bio: %1$s</string>
+    <string name="user_twitter">Twitter/X: %1$s</string>
+    <string name="user_repos">Total Repo: %1$d</string>
+    <string name="user_gists">Total Gists: %1$d</string>
+    <string name="user_followers">Followers: %1$d</string>
+    <string name="user_following">Following: %1$d</string>
 </resources>

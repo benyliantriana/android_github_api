@@ -24,10 +24,11 @@
                 app:srcCompat="@drawable/arrow_back" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/content_padding"
-                android:text="User Detail"
+                android:text="@string/user_detail_title"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="@id/app_bar"
                 app:layout_constraintTop_toBottomOf="@id/app_bar" />
@@ -36,10 +37,145 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/loading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="@dimen/content_padding"
-        android:text="user detail fragment"
+        android:text="@string/user_loading"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/avatar"
+        android:layout_width="@dimen/detail_avatar_size"
+        android:layout_height="@dimen/detail_avatar_size"
+        android:paddingVertical="@dimen/content_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_title_height"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avatar" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_4"
+        android:paddingStart="@dimen/content_padding"
         app:layout_constraintStart_toStartOf="@id/app_bar"
-        app:layout_constraintTop_toBottomOf="@id/app_bar" />
+        app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_github"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_4"
+        android:paddingStart="@dimen/content_padding"
+        app:layout_constraintStart_toStartOf="@id/app_bar"
+        app:layout_constraintTop_toBottomOf="@id/tv_username" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_4"
+        android:paddingStart="@dimen/content_padding"
+        app:layout_constraintStart_toStartOf="@id/app_bar"
+        app:layout_constraintTop_toBottomOf="@id/tv_github" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_blog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_4"
+        android:paddingStart="@dimen/content_padding"
+        app:layout_constraintStart_toStartOf="@id/app_bar"
+        app:layout_constraintTop_toBottomOf="@id/tv_company" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_4"
+        android:paddingStart="@dimen/content_padding"
+        app:layout_constraintStart_toStartOf="@id/app_bar"
+        app:layout_constraintTop_toBottomOf="@id/tv_blog" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_4"
+        android:paddingStart="@dimen/content_padding"
+        app:layout_constraintStart_toStartOf="@id/app_bar"
+        app:layout_constraintTop_toBottomOf="@id/tv_location" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_bio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_4"
+        android:paddingStart="@dimen/content_padding"
+        app:layout_constraintStart_toStartOf="@id/app_bar"
+        app:layout_constraintTop_toBottomOf="@id/tv_email" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_twitter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_4"
+        android:paddingStart="@dimen/content_padding"
+        app:layout_constraintStart_toStartOf="@id/app_bar"
+        app:layout_constraintTop_toBottomOf="@id/tv_bio" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_repos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_4"
+        android:paddingStart="@dimen/content_padding"
+        app:layout_constraintStart_toStartOf="@id/app_bar"
+        app:layout_constraintTop_toBottomOf="@id/tv_twitter" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_gists"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_4"
+        android:paddingStart="@dimen/content_padding"
+        app:layout_constraintStart_toStartOf="@id/app_bar"
+        app:layout_constraintTop_toBottomOf="@id/tv_repos" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_followers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_4"
+        android:paddingStart="@dimen/content_padding"
+        app:layout_constraintStart_toStartOf="@id/app_bar"
+        app:layout_constraintTop_toBottomOf="@id/tv_gists" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_following"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_4"
+        android:paddingStart="@dimen/content_padding"
+        app:layout_constraintStart_toStartOf="@id/app_bar"
+        app:layout_constraintTop_toBottomOf="@id/tv_followers" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="avatar, tv_name, tv_username, tv_github, tv_company, tv_blog, tv_location,
+        tv_email, tv_bio, tv_twitter, tv_repos, tv_gists, tv_followers, tv_following" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

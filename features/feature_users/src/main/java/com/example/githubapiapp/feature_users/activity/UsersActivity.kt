@@ -1,4 +1,4 @@
-package com.example.githubapiapp.feature_users.ui
+package com.example.githubapiapp.feature_users.activity
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -8,6 +8,10 @@ import com.example.githubapiapp.feature_users.R
 import com.example.githubapiapp.feature_users.databinding.UsersActivityBinding
 import dagger.hilt.android.AndroidEntryPoint
 
+/**
+ * This class should be moved to feature main that has the navigation graph
+ * for now just keep it like this because it's only has one feature
+ */
 @AndroidEntryPoint
 class UsersActivity : AppCompatActivity() {
     private lateinit var binding: UsersActivityBinding

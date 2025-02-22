@@ -3,8 +3,8 @@ package com.example.githubapiapp.feature_users.ui.user
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.githubapiapp.feature_users.di.IODispatcher
 import com.example.githubapiapp.feature_users.repository.GitHubRepository
+import com.example.githubapiapp.lib_base.di.IODispatcher
 import com.example.githubapiapp.lib_network.response.BaseResponse
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher

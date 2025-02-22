@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.githubapiapp.feature_users.databinding.UserDetailFragmentBinding
-import com.example.githubapiapp.feature_users.ui.BaseFragment
+import com.example.githubapiapp.lib_base.fragment.BaseFragment
 
 class UserDetailFragment : BaseFragment<UserDetailFragmentBinding>() {
     override fun inflateLayout(

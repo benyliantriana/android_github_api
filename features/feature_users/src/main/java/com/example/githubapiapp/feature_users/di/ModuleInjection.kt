@@ -5,22 +5,18 @@ import com.example.githubapiapp.feature_users.datasource.remote.GitHubRemoteData
 import com.example.githubapiapp.feature_users.datasource.remote.GitHubRemoteDataSourceImpl
 import com.example.githubapiapp.feature_users.repository.GitHubRepository
 import com.example.githubapiapp.feature_users.repository.GitHubRepositoryImpl
+import com.example.githubapiapp.lib_base.di.IODispatcher
 import com.example.githubapiapp.lib_network.service.ApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
-import javax.inject.Qualifier
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 class ModuleInjection {
-    @IODispatcher
-    @Provides
-    fun provideIODispatcher(): CoroutineDispatcher = Dispatchers.IO
 
     @Provides
     @Singleton
@@ -48,7 +44,3 @@ class ModuleInjection {
             gitHubRemoteDataSource
         )
 }
-
-@Qualifier
-@Retention(AnnotationRetention.BINARY)
-annotation class IODispatcher

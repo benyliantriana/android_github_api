@@ -67,6 +67,8 @@ dependencies {
     implementation(libs.hilt)
     implementation(libs.junit4)
     implementation(libs.material)
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
     implementation(libs.robolectric)
     kapt(libs.hilt.compiler)
 }

@@ -1,4 +1,4 @@
-package com.example.githubapiapp.feature_users
+package com.example.githubapiapp.feature_users.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater

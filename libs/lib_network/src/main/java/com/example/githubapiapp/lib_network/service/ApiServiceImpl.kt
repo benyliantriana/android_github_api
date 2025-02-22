@@ -11,7 +11,9 @@ class ApiServiceImpl(
 ) : ApiService {
 
     companion object {
-        private const val BASE_URL = "https://catfact.ninja/"
+        private const val BASE_URL = "https://api.github.com/"
+        private const val HEADER_API_VERSION = "X-GitHub-Api-Version"
+        private const val VERSION = "2022-11-28"
     }
 
     override fun service(): Retrofit {
@@ -22,6 +24,7 @@ class ApiServiceImpl(
                 .build()
             val request = chain.request()
                 .newBuilder()
+                .addHeader(HEADER_API_VERSION, VERSION)
                 .url(url)
                 .build()
             return@Interceptor chain.proceed(request)

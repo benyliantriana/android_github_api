@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/userFragment"
-        android:name="com.example.githubapiapp.feature_users.UserFragment"
+        android:name="com.example.githubapiapp.feature_users.ui.user.UserFragment"
         android:label="User">
         <action
             android:id="@+id/action_user_to_detail"
@@ -15,7 +15,7 @@
 
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.example.githubapiapp.feature_users.UserDetailFragment"
+        android:name="com.example.githubapiapp.feature_users.ui.detail.UserDetailFragment"
         android:label="Detail" />
 
 </navigation>
